@@ -1,3 +1,0 @@
-{
-    "qq": {"command": "/opt/deepinwine/apps/Deepin-QQEIM/run.sh -u %u", "delay": 10, "priority": 1, "is_period": 0}
-}

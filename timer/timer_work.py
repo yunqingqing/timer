@@ -1,6 +1,7 @@
 # -*- endcoding=utf-8 -*-
 import subprocess
-import sched, time
+import sched
+import time
 import json
 import logging
 
@@ -24,13 +25,13 @@ logger.addHandler(fh)
 logger.addHandler(ch)
 
 
-# args = 
 def period_task(sc, delay, priority, cmd_args):
     # do you stuff
     logger.info("do task...")
     subprocess.run(cmd_args)
     logger.info("do task end...")
     sc.enter(delay, priority, period_task, (sc, delay, priority, cmd_args,))
+
 
 def load_task(s):
     with open('task.json') as f:
