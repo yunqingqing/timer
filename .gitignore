@@ -1,2 +1,4 @@
 *.pyc
 timer.egg-info/
+build/
+dist/

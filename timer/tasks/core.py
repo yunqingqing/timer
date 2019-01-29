@@ -7,7 +7,7 @@ class Manager():
     dirver_namespace = "timer.tasks"
 
     def __init__(self):
-        self.driver = load_driver(self.dirver_namespace, settings.tasks.backends)
+        self.driver = load_driver(self.dirver_namespace, settings.tasks['backend'])
 
     def create_task(self):
         pass
