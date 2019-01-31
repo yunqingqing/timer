@@ -1,14 +1,42 @@
 # timer
 
-实现一个时间的小功能
+简单番茄钟实现(Pomodoro Technique),下面是使用步骤
 
-当前功能
+1. clone代码
 
-- 定时打开qq
+    ```bash
+    git clone git@github.com:yunqingqing/timer.git
+    ```
 
-想要做的特性:
+2. timer.ini文件中可以配置任务存储后端，当前只支持json文件存储,配置下你的tasks.json文件路径
 
-- 每个时间周期后要求输入对这个时间周期的总结
-- 动态添加任务
-- 休息时间自动跳过
+    ```ini
+    [tasks]
+    uri = /path
+    ```
 
+3. tasks.json文件格式
+
+    任务配置方式
+    command      要执行的命令
+    delay       多久之后执行(s)
+    priority    delay相同时任务执行优先级
+    is_period   是否为周期执行任务
+
+    ```json
+    {
+        "task_name": {"command": "exo-open --launch TerminalEmulator", "delay": 10, "priority": 1, "is_period": 0}
+    }
+    ```
+
+4. 安装
+
+    ```bash
+    python setup.py install
+    ```
+
+5. 启动
+
+    ```bash
+    timer
+    ```
