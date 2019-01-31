@@ -23,7 +23,7 @@ def _load_task():
 
 
 def load_task():
-    scheduler_task = threading.Thread(target=load_task)
+    scheduler_task = threading.Thread(target=_load_task)
     scheduler_task.start()
 
 
