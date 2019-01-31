@@ -15,7 +15,7 @@ def run_task(sc, task):
     logger.info("run {}...", " ".join(cmd_args))
     subprocess.run(cmd_args)
     if task.is_period:
-        sc.enter(task.delay, task.priority, task.period_task, (sc, task,))
+        sc.enter(task.delay, task.priority, run_task, (sc, task,))
 
 
 class Sched(base.SchedulerDriveBase):
