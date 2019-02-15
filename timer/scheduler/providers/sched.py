@@ -6,13 +6,13 @@ import time
 from timer.scheduler.providers import base
 
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 
 
 def run_task(sc, task):
     # do you stuff
     cmd_args = task.command.split(" ")
-    logger.info("run {}...", " ".join(cmd_args))
+    logger.info("run {}...".format(" ".join(cmd_args)))
     subprocess.run(cmd_args)
     if task.is_period:
         sc.enter(task.delay, task.priority, run_task, (sc, task,))
